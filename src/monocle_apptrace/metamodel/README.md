@@ -1,13 +1,12 @@
 # Monocle metamodel
 
-## Overview 
-Monocle metamodel is the way to manage standardization across all supported GenAI component stack. It includes the list of components that Monocle can identify and extract metadata. This help understanding and analyzing the traces from applications that include multiple components and can evolve over time. This is one of core value that Monocle provides to it's user community.
+Monocle metamodel is the way to standardize telemetry data across all GenAI components supported by Monocle. This approach makes it easy to understand, correlate and analyze traces from various components as components and GenAI app stack. Community curation and validations of the metamodel for compatibility with open-source observability stack is one of the core values this project provides to its users. This metamodel is also extensible to support customizations to community-curated artifacts.  
 
 ## Meta model
-The Monocle metamodel comprises of three things, 
-- Entity types, definitions of technology types and supported vendor implementations.
-- A JSON format that overlays on top of Open Telemetry tracing format that includes the common attributes for each entity type.
-- Map of component menthods to trace with instrumentation methods provided by Monocle.
+The Monocle metamodel comprises of three things
+- Entity types - definitions of technology types and supported vendor implementations.
+- GenAI domain-specific span format - an OpenTelemetry compliant tracing format to represent spans related to GenAI entities.
+- Map of component methods to trace with instrumentation methods provided by Monocle
 
 ### Entity type
 The entity type defines the type of GenAI component that Monocle understand. The monocle instrumentation can extract the relevenat information for this entity. There are a fixed set of [entity types](./entity_types.py) that are defined by Monocle out of the box, eg workflow, model etc. As the GenAI landscape evolves, the Monocle community will introduce a new entity type if the current entities won't represent a new technology component.
